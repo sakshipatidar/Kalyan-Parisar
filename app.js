@@ -6,7 +6,7 @@ const port = 5000;
 
 app.use('/static' , express.static('static'));
 // app.use(express.urlencoded());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 
 app.set('view engine', 'pug');
