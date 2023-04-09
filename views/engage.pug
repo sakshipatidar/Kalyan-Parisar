@@ -1,0 +1,118 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Book for Engagement
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp', crossorigin='anonymous')
+  body(style='background-color: lavender;')
+    // navigation bar
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      .container-fluid
+        a.navbar-brand(href='/') Kalyan
+        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page', href='/') Home
+            li.nav-item
+              a.nav-link(href='/gallery') Gallery
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle.active(href='#', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+                | Booking
+              ul.dropdown-menu
+                li
+                  a.dropdown-item(href='/wedding')
+                    | Wedding
+                    | Ceremony
+                li
+                  a.dropdown-item(href='/engagement')
+                    | Engagement
+                    | Ceremony
+                li
+                  a.dropdown-item(href='/familyfunc') Family Function
+                //
+                  <li>
+                  <hr class="dropdown-divider">
+                  </li>
+                // <li><a class="dropdown-item" href="#">Something else here</a></li>
+            li.nav-item
+              a.nav-link(href='/') About Us
+          form.d-flex(role='search')
+            input.form-control.me-2(type='search', placeholder='Search', aria-label='Search')
+            button.btn.btn-outline-success(type='submit') Search
+    #carouselExampleAutoplaying.carousel.slide(data-bs-ride='carousel')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='/static/e5.jpg', height='500px', alt='1')
+        .carousel-item
+          img.d-block.w-100(src='/static/e2.jpg', height='500px', alt='2')
+        .carousel-item.active
+          img.d-block.w-100(src='/static/e3.jpg', height='500px', alt='1')
+        .carousel-item
+          img.d-block.w-100(src='/static/e4.jpg', height='500px', alt='2')
+        .carousel-item
+          img.d-block.w-100(src='/static/e1.jpg', height='500px', alt='2')
+      button.carousel-control-prev(type='button', data-bs-target='#carouselExampleAutoplaying', data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button', data-bs-target='#carouselExampleAutoplaying', data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+    h1.text-center.my-4 Fill the form
+    // forms
+    form(autocomplete="off" ,action ="https://script.google.com/macros/s/AKfycbzL602aGVX9sZHOdZPq7sX8jdkwszd1bwFulcwKYf7Zx8KaXh_e_ul9zcesCK3j5vyh/exec" method="post" )
+      .container.my-4
+        .row.my-4
+            .col
+                input.form-control(type='text', placeholder='First name', aria-label='First name' , name='First_Name')
+            .col
+                input.form-control(type='text', placeholder='Last name', aria-label='Last name' , name='Last_Name')
+        .col-12
+            input#engageinputfname1.form-control(type='text', placeholder="Father's name" , name='Father_Name')
+        .col-12
+            input#engageinputcnumber1.form-control(type='text', placeholder='Contact Number' , name='Contact')
+        .row.my-4
+            .col
+                input.form-control(type='number', placeholder='Expected Guests', aria-label='First name' , name='No_Of_Guests')
+        .row.my-4
+            label(for='')  Date:
+            .col
+                input.form-control(type='date', placeholder='Select Date', aria-label='First name', name='Date_engage' )
+        .form-check
+            input#flexCheckChecked.form-check-input(type='checkbox', value='Yes', checked='' , name='One_Day')
+            label.form-check-label(for='flexCheckChecked')
+            | Is it a one day booking?
+        .form-check
+            input#flexCheckChecked.form-check-input(type='checkbox', value='Yes', checked='' , name='Rooms_Engage')
+            label.form-check-label(for='flexCheckChecked')
+            | Rooms will be required?
+        .mb-3
+            label.form-label(for='exampleFormControlTextarea1')
+            | Additional Information that you want to provide
+            | us.
+            textarea#exampleFormControlTextarea1.form-control(rows='3' , name='Additional_Information')
+        button.btn.btn-primary(type='submit', data-bs-toggle='modal', data-bs-target='#engagesubmitModal') Submit
+        // engage submit Modal
+        #engagesubmitModal.modal.fade(tabindex='-1', aria-labelledby='engageModalLabel', aria-hidden='true')
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        h1#engagesubmitModalLabel.modal-title.fs-5 Submitted
+                        button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+                    .modal-body
+                        | Your form has been submitted successfully.
+                    .modal-footer
+                        button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close
+                        // <button type="button" class="btn btn-primary">Save changes</button>
+    // footer
+    footer.container
+      p.float-end
+        a(href='#') Back to top
+      p
+        | &copy; 2022&ndash;2023 Kalyan Parisar, &middot; 
+        a(href='#') Privacy
+        |  &middot; 
+        a(href='#') Terms
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js', integrity='sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N', crossorigin='anonymous')
