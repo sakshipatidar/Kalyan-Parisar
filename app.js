@@ -5,7 +5,9 @@ const app = express();
 const port = 5000;
 
 app.use('/static' , express.static('static'));
-app.use(express.urlencoded());
+// app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname , 'views'));
